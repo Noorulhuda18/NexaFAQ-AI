@@ -1,0 +1,366 @@
+[
+  {
+    "id": 1,
+    "question": "How can I track my order?",
+    "answer": "Sign in to your account, open My Orders and choose Track Package next to the order. You will also find a tracking number in your shipping confirmation email. (Demo data: this assistant cannot look up real orders.)",
+    "category": "Orders",
+    "keywords": "where is my order package parcel shipment tracking number location"
+  },
+  {
+    "id": 2,
+    "question": "How do I check the status of my order?",
+    "answer": "Open My Orders in your account to see the current status: Pending, Processing, Shipped or Delivered. Each status change also triggers an email notification.",
+    "category": "Orders",
+    "keywords": "order status processing pending shipped delivered progress update"
+  },
+  {
+    "id": 3,
+    "question": "I did not receive an order confirmation email. What should I do?",
+    "answer": "First check your spam or promotions folder. If the email is not there, confirm that the address on your account is correct and look for the order under My Orders. If the order is listed, you can resend the confirmation from the order page.",
+    "category": "Orders",
+    "keywords": "confirmation receipt missing email spam not received"
+  },
+  {
+    "id": 4,
+    "question": "Can I change the items in my order after placing it?",
+    "answer": "Items can be changed only while the order status is Pending, which is usually within the first hour. Open the order in My Orders and select Edit Items. Once the order is Processing, you will need to cancel it and place a new one.",
+    "category": "Orders",
+    "keywords": "modify edit update add remove item size color quantity"
+  },
+  {
+    "id": 5,
+    "question": "How do I change the delivery address on an existing order?",
+    "answer": "You can update the delivery address from the order page while the status is Pending or Processing. After the order has shipped, the address cannot be changed, but you can contact the carrier to arrange redirection.",
+    "category": "Orders",
+    "keywords": "update shipping address wrong address edit location"
+  },
+  {
+    "id": 6,
+    "question": "Where can I find my order history and invoices?",
+    "answer": "All past purchases are listed under My Orders. Select any order and click Download Invoice to get a PDF copy of your receipt.",
+    "category": "Orders",
+    "keywords": "past purchases receipt invoice download history bill"
+  },
+  {
+    "id": 7,
+    "question": "How long does delivery take?",
+    "answer": "Standard shipping takes 3 to 5 business days and Express shipping takes 1 to 2 business days after your order has been dispatched. Orders are usually dispatched within 24 hours on business days.",
+    "category": "Shipping",
+    "keywords": "delivery time estimated arrival days how soon fast"
+  },
+  {
+    "id": 8,
+    "question": "What shipping options do you offer?",
+    "answer": "We offer Standard (3-5 business days), Express (1-2 business days) and Next-Day delivery in selected cities. The available options and their prices are shown at checkout based on your address.",
+    "category": "Shipping",
+    "keywords": "standard express overnight next day delivery methods speed"
+  },
+  {
+    "id": 9,
+    "question": "Do you offer free shipping?",
+    "answer": "Yes. Standard shipping is free on orders over $50. Orders below that amount have a flat shipping fee that is shown before you pay.",
+    "category": "Shipping",
+    "keywords": "free delivery minimum order amount threshold shipping cost price how much fee"
+  },
+  {
+    "id": 10,
+    "question": "Do you ship internationally?",
+    "answer": "We ship to over 40 countries. International delivery usually takes 7 to 14 business days. Customs duties and import taxes may apply and are paid by the recipient.",
+    "category": "Shipping",
+    "keywords": "international overseas abroad worldwide countries customs duties"
+  },
+  {
+    "id": 11,
+    "question": "My package is delayed. What should I do?",
+    "answer": "Check the latest tracking update first, as carriers occasionally have regional delays. If your package is more than 3 business days late, contact customer support with your order number and we will open an investigation with the carrier.",
+    "category": "Shipping",
+    "keywords": "late delayed not arrived missing lost stuck overdue where"
+  },
+  {
+    "id": 12,
+    "question": "Can I ship my order to a PO box or to a different address?",
+    "answer": "You can ship to any valid residential or business address, including gift recipients. PO boxes are supported for Standard shipping only, because Express carriers cannot deliver to them.",
+    "category": "Shipping",
+    "keywords": "po box gift different address another person recipient"
+  },
+  {
+    "id": 13,
+    "question": "What payment methods do you accept?",
+    "answer": "We accept Visa, Mastercard, American Express, PayPal, Apple Pay and Google Pay. Gift cards and store credit can be combined with any of these methods at checkout.",
+    "category": "Payments",
+    "keywords": "what cards do you take credit card debit card paypal apple pay google pay ways to pay"
+  },
+  {
+    "id": 14,
+    "question": "Is it safe to enter my credit card details on your website?",
+    "answer": "Yes. All payments are processed over an encrypted connection (TLS), and we never store your full card number on our servers. Card payments are handled by a PCI-DSS compliant payment provider.",
+    "category": "Payments",
+    "keywords": "secure security encryption safe card information privacy trust"
+  },
+  {
+    "id": 15,
+    "question": "Why was my payment declined?",
+    "answer": "Payments are usually declined because of incorrect card details, insufficient funds, or a security check by your bank. Double-check the card number, expiry date and billing address, or try a different payment method. If the problem continues, contact your bank.",
+    "category": "Payments",
+    "keywords": "failed card rejected transaction error not going through"
+  },
+  {
+    "id": 16,
+    "question": "Can I pay in installments?",
+    "answer": "Yes. On orders over $100 you can choose Pay in 4 at checkout, which splits the total into four interest-free payments made every two weeks. Eligibility is subject to approval by the payment partner.",
+    "category": "Payments",
+    "keywords": "buy now pay later monthly installment split payments instalment"
+  },
+  {
+    "id": 17,
+    "question": "Will I be charged sales tax?",
+    "answer": "Sales tax or VAT is calculated at checkout based on your delivery address and is shown as a separate line before you confirm payment.",
+    "category": "Payments",
+    "keywords": "tax vat charges fees checkout total extra cost"
+  },
+  {
+    "id": 18,
+    "question": "What is your return policy?",
+    "answer": "You can return most unused items in their original packaging within 30 days of delivery for a full refund. Final-sale items, gift cards and personal care products cannot be returned.",
+    "category": "Returns & Refunds",
+    "keywords": "return window days policy send back eligible"
+  },
+  {
+    "id": 19,
+    "question": "How do I return an item?",
+    "answer": "Go to My Orders, select the item and click Start Return. Print the prepaid return label, pack the item securely and drop it off at any partner carrier location. You will receive a confirmation email once we receive it.",
+    "category": "Returns & Refunds",
+    "keywords": "send back return label steps process how to return package"
+  },
+  {
+    "id": 20,
+    "question": "How long does it take to get my refund?",
+    "answer": "Refunds are issued to your original payment method within 5 to 7 business days after we receive and inspect your return. Your bank may need a few extra days to show the credit.",
+    "category": "Returns & Refunds",
+    "keywords": "get my money back refund time processing days when will I get"
+  },
+  {
+    "id": 21,
+    "question": "Can I exchange an item for a different size or color?",
+    "answer": "Yes. Start a return from My Orders and select Exchange instead of Refund, then pick the new size or color. If the replacement is in stock it will ship as soon as your return is scanned by the carrier.",
+    "category": "Returns & Refunds",
+    "keywords": "swap replace exchange size color different variant"
+  },
+  {
+    "id": 22,
+    "question": "What should I do if I received a damaged or defective item?",
+    "answer": "We are sorry about that. Contact support within 14 days of delivery with your order number and a photo of the damage. We will send a replacement or issue a full refund, and you do not need to pay for return shipping.",
+    "category": "Returns & Refunds",
+    "keywords": "arrived broken faulty wrong item damaged defective not working"
+  },
+  {
+    "id": 23,
+    "question": "Who pays for return shipping?",
+    "answer": "Return shipping is free for damaged, defective or incorrect items. For other returns, a flat fee of $5 is deducted from your refund when you use our prepaid label.",
+    "category": "Returns & Refunds",
+    "keywords": "return shipping cost label fee free who pays"
+  },
+  {
+    "id": 24,
+    "question": "How do I cancel my order?",
+    "answer": "Open My Orders and select Cancel Order next to the order. Orders can be cancelled free of charge while the status is Pending or Processing.",
+    "category": "Cancellations",
+    "keywords": "cancel cancellation stop purchase undo order"
+  },
+  {
+    "id": 25,
+    "question": "Can I cancel an order that has already shipped?",
+    "answer": "Once an order has shipped it can no longer be cancelled. You can refuse the delivery or, after it arrives, return it for a refund under our 30-day return policy.",
+    "category": "Cancellations",
+    "keywords": "cancel shipped dispatched refuse intercept too late"
+  },
+  {
+    "id": 26,
+    "question": "Will I get a refund if I cancel my order?",
+    "answer": "Yes. If your order is cancelled before it ships, the full amount is refunded to your original payment method within 3 to 5 business days.",
+    "category": "Cancellations",
+    "keywords": "cancellation refund money back charged after cancel"
+  },
+  {
+    "id": 27,
+    "question": "How do I cancel my subscription?",
+    "answer": "Go to Account Settings, open Subscriptions and click Cancel Subscription. Your plan stays active until the end of the current billing period and will not renew afterwards.",
+    "category": "Cancellations",
+    "keywords": "membership subscription auto renew stop recurring plan"
+  },
+  {
+    "id": 28,
+    "question": "How do I create an account?",
+    "answer": "Click Sign Up at the top right of the page, enter your name, email address and a password, and confirm your email using the link we send you. Creating an account takes less than a minute.",
+    "category": "Account",
+    "keywords": "register sign up registration new account join create profile"
+  },
+  {
+    "id": 29,
+    "question": "How do I log in to my account?",
+    "answer": "Click Log In at the top right of the page and enter your email address and password. You can also sign in with Google or Apple if you linked them to your account.",
+    "category": "Account",
+    "keywords": "login sign in access my account cannot log in"
+  },
+  {
+    "id": 30,
+    "question": "Can I check out as a guest without creating an account?",
+    "answer": "Yes. Choose Continue as Guest at checkout and enter your email and delivery details. Creating an account is optional, but it lets you track orders and save your addresses.",
+    "category": "Account",
+    "keywords": "guest checkout without account no registration"
+  },
+  {
+    "id": 31,
+    "question": "How do I update my account details?",
+    "answer": "Open Account Settings, then Profile, to edit your name, email address, phone number and saved addresses. Click Save Changes when you are done.",
+    "category": "Account",
+    "keywords": "profile email phone address edit change name personal information"
+  },
+  {
+    "id": 32,
+    "question": "How do I delete my account?",
+    "answer": "Go to Account Settings, choose Privacy and select Delete Account. Your personal data is removed within 30 days, except for records we are legally required to keep, such as invoices.",
+    "category": "Account",
+    "keywords": "close remove deactivate account data privacy erase"
+  },
+  {
+    "id": 33,
+    "question": "I forgot my password. How do I reset it?",
+    "answer": "On the login page click Forgot Password, enter your email address and we will send you a reset link. The link is valid for 60 minutes.",
+    "category": "Password",
+    "keywords": "forgot lost reset recover password forgotten"
+  },
+  {
+    "id": 34,
+    "question": "I did not receive the password reset email. What can I do?",
+    "answer": "Check your spam folder and make sure you entered the email address used for your account. Wait a few minutes, then request a new link. If it still does not arrive, contact customer support.",
+    "category": "Password",
+    "keywords": "reset link email not arriving spam missing no email"
+  },
+  {
+    "id": 35,
+    "question": "How do I change my password?",
+    "answer": "Sign in, open Account Settings, select Security and click Change Password. Enter your current password and then your new one. Use at least 8 characters with a mix of letters and numbers.",
+    "category": "Password",
+    "keywords": "update new password settings security change"
+  },
+  {
+    "id": 36,
+    "question": "How can I turn on two-factor authentication?",
+    "answer": "In Account Settings, open Security and switch on Two-Factor Authentication. You can receive codes by text message or use an authenticator app. Two-factor authentication adds an extra layer of protection to your account.",
+    "category": "Password",
+    "keywords": "2fa security verification code authenticator extra protection"
+  },
+  {
+    "id": 37,
+    "question": "How do I use a promo code?",
+    "answer": "Enter your promo code in the Promo Code box on the cart or payment page and click Apply. The discount will appear in your order summary before you pay.",
+    "category": "Discounts",
+    "keywords": "coupon voucher discount code apply redeem checkout"
+  },
+  {
+    "id": 38,
+    "question": "Why is my promo code not working?",
+    "answer": "Promo codes can fail because they have expired, require a minimum order value, exclude some products, or were already used. Check the terms of the offer and make sure the code is typed exactly as shown.",
+    "category": "Discounts",
+    "keywords": "invalid expired coupon error not valid rejected code problem"
+  },
+  {
+    "id": 39,
+    "question": "Do you offer student or military discounts?",
+    "answer": "Yes. Students, teachers and active or retired military personnel get 10% off after verifying their status through our verification partner. Start the process from the Discounts page.",
+    "category": "Discounts",
+    "keywords": "student military teacher discount verification special pricing"
+  },
+  {
+    "id": 40,
+    "question": "How can I get notified about sales and special offers?",
+    "answer": "Subscribe to our newsletter at the bottom of the homepage or enable promotional notifications in Account Settings. Subscribers get early access to seasonal sales and exclusive deals.",
+    "category": "Discounts",
+    "keywords": "newsletter deals subscribe offers sale black friday alerts"
+  },
+  {
+    "id": 41,
+    "question": "Do you have a loyalty or rewards program?",
+    "answer": "Yes. Our Nexa Rewards program gives you 1 point for every dollar spent. Every 100 points can be redeemed for a $5 reward on a future order. Membership is free for all account holders.",
+    "category": "Discounts",
+    "keywords": "points rewards loyalty member membership benefits"
+  },
+  {
+    "id": 42,
+    "question": "Can I use more than one promo code on the same order?",
+    "answer": "Only one promo code can be applied to each order. If several codes are eligible, we recommend using the one that gives you the biggest saving. Rewards points can still be used together with a promo code.",
+    "category": "Discounts",
+    "keywords": "stack multiple coupons combine two codes together"
+  },
+  {
+    "id": 43,
+    "question": "How do I know if an item is in stock?",
+    "answer": "The product page shows the current availability. In Stock means it is ready to ship, Low Stock means fewer than 5 units remain, and Out of Stock means it is currently unavailable.",
+    "category": "Products",
+    "keywords": "availability available stock inventory units left"
+  },
+  {
+    "id": 44,
+    "question": "What happens if a product is out of stock?",
+    "answer": "Click Notify Me on the product page and enter your email address. We will message you as soon as the item is back in stock. Restock dates are shown on the page when they are known.",
+    "category": "Products",
+    "keywords": "sold out unavailable restock back in stock notify waitlist"
+  },
+  {
+    "id": 45,
+    "question": "Can I pre-order upcoming products?",
+    "answer": "Yes. Items marked Pre-Order can be bought before their release date. You are charged when the order is placed and the item ships as soon as it becomes available, with the expected date shown on the product page.",
+    "category": "Products",
+    "keywords": "preorder upcoming release launch coming soon reserve"
+  },
+  {
+    "id": 46,
+    "question": "Where can I find the size guide for a product?",
+    "answer": "Select the Size Guide link beside the size selector on any clothing or footwear page. It includes measurement charts and fit notes from our product team.",
+    "category": "Products",
+    "keywords": "sizing fit measurements chart clothing shoes which size"
+  },
+  {
+    "id": 47,
+    "question": "Do your products come with a warranty?",
+    "answer": "Electronics include a 1-year manufacturer warranty and most other products carry a 90-day quality guarantee. The warranty period is listed in the Details tab of each product page.",
+    "category": "Products",
+    "keywords": "warranty guarantee repair defective coverage protection"
+  },
+  {
+    "id": 48,
+    "question": "How can I contact customer support?",
+    "answer": "You can reach our support team by email at support@nexashop.example, by phone at +1 (555) 010-0199, or through the Help Center chat on our website. (These are fictional demo contact details.)",
+    "category": "Support",
+    "keywords": "contact reach help email phone call talk speak human person someone get in touch"
+  },
+  {
+    "id": 49,
+    "question": "What are your customer support hours?",
+    "answer": "Our support team is available Monday to Friday from 9:00 AM to 6:00 PM and on Saturdays from 10:00 AM to 4:00 PM (Eastern Time). Emails sent outside these hours are answered on the next business day.",
+    "category": "Support",
+    "keywords": "opening hours available open time days working schedule"
+  },
+  {
+    "id": 50,
+    "question": "Do you offer live chat support?",
+    "answer": "Yes. Click the chat bubble in the lower right corner of the Help Center during support hours to speak with an agent. Outside those hours our virtual assistant can answer common questions.",
+    "category": "Support",
+    "keywords": "chat agent online representative live person"
+  },
+  {
+    "id": 51,
+    "question": "How do I report a problem with the website?",
+    "answer": "Use the Report a Problem link in the website footer and describe what happened, including the page, your browser and any error message. A screenshot helps our team fix the issue faster.",
+    "category": "Support",
+    "keywords": "bug error site problem broken page not loading glitch"
+  },
+  {
+    "id": 52,
+    "question": "How do I file a complaint or give feedback?",
+    "answer": "We value your feedback. Email feedback@nexashop.example or use the Feedback form in your account. Complaints are acknowledged within 1 business day and resolved within 5 business days. (Fictional demo address.)",
+    "category": "Support",
+    "keywords": "complaint feedback review suggestion unhappy dissatisfied"
+  }
+]

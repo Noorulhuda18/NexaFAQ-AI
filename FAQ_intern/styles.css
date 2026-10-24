@@ -1,0 +1,443 @@
+/* ==========================================================================
+   NexaFAQ AI - custom styling (injected by app.py)
+
+   Palette
+     navy background  #0B1020      panel   #121A2B     raised panel #172036
+     purple accent    #8B5CF6      cyan accent #22D3EE
+     text             #E8ECF8      muted   #94A3B8
+
+   Rules of thumb used in this file
+     * Never set font-family on <span>/<i> or "*": Streamlit draws its icons
+       with an icon font and a blanket rule would turn them into plain text.
+     * Every custom surface sets its own text colour, so contrast never
+       depends on the active Streamlit theme.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #0B1020;
+  --panel: #121A2B;
+  --panel-2: #172036;
+  --sidebar: #0D1324;
+  --border: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(148, 163, 184, 0.28);
+  --text: #E8ECF8;
+  --muted: #94A3B8;
+  --purple: #8B5CF6;
+  --purple-deep: #6D28D9;
+  --cyan: #22D3EE;
+  --ok: #34D399;
+  --warn: #FBBF24;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------------------------------------------------------- */
+html, body, .stApp {
+  font-family: var(--font);
+  color: var(--text);
+}
+.stApp {
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgba(139, 92, 246, 0.16), transparent 60%),
+    radial-gradient(700px 380px at -5% 0%, rgba(34, 211, 238, 0.07), transparent 60%),
+    var(--bg);
+}
+.stApp p, .stApp li, .stApp label, .stApp h1, .stApp h2, .stApp h3, .stApp h4,
+.stApp input, .stApp textarea, .stApp button p {
+  font-family: var(--font);
+}
+.stApp p, .stApp li, .stApp label { color: var(--text); }
+.stApp [data-testid="stCaptionContainer"], .stApp small { color: var(--muted); }
+.stApp h1, .stApp h2, .stApp h3, .stApp h4 { color: var(--text); letter-spacing: -0.01em; }
+.stApp a { color: var(--cyan); }
+
+/* Streamlit chrome: hide menu/footer/deploy, keep the header (it holds the sidebar toggle) */
+#MainMenu, footer, .stDeployButton, .stAppDeployButton,
+[data-testid="stToolbarActions"], [data-testid="stDecoration"] { display: none !important; visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+
+.block-container {
+  max-width: 980px;
+  padding-top: 1.6rem;
+  padding-bottom: 6rem;
+}
+
+/* Scrollbars */
+* { scrollbar-width: thin; scrollbar-color: rgba(148, 163, 184, 0.35) transparent; }
+
+/* ---------- Sidebar -------------------------------------------------------- */
+section[data-testid="stSidebar"] {
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+}
+section[data-testid="stSidebar"] > div { padding-top: 0.4rem; }
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] { padding-top: 1rem; }
+
+.brand { display: flex; align-items: center; gap: 12px; margin: 4px 0 2px; }
+.brand-logo {
+  width: 42px; height: 42px; border-radius: 12px; flex: none;
+  display: grid; place-items: center; color: #fff;
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple) 55%, var(--cyan));
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.35);
+}
+.brand-logo svg { width: 22px; height: 22px; }
+.brand-name { font-size: 1.18rem; font-weight: 700; color: var(--text); line-height: 1.1; }
+.brand-name span { color: var(--cyan); }
+.brand-tag { color: var(--muted); font-size: 0.82rem; margin: 8px 0 14px; }
+
+.side-sep { height: 1px; background: var(--border); margin: 16px 0; border: 0; }
+.side-label {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin: 6px 0 8px; font-weight: 600;
+}
+
+.info-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.info-card .ic-title {
+  display: flex; align-items: center; gap: 8px; font-size: 0.74rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+}
+.info-card .ic-title svg { width: 15px; height: 15px; color: var(--cyan); }
+.info-card .ic-value { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-top: 4px; }
+.info-card .ic-sub { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+.side-footer { text-align: center; color: var(--muted); font-size: 0.74rem; padding: 14px 0 4px; }
+.side-footer b { color: var(--cyan); font-weight: 600; }
+
+/* ---------- Buttons -------------------------------------------------------- */
+.stButton > button,
+[data-testid="stFormSubmitButton"] > button,
+[data-testid="stDownloadButton"] > button {
+  width: 100%;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.stButton > button p, [data-testid="stFormSubmitButton"] > button p,
+[data-testid="stDownloadButton"] > button p { color: inherit; margin: 0; }
+.stButton > button:hover,
+[data-testid="stFormSubmitButton"] > button:hover,
+[data-testid="stDownloadButton"] > button:hover {
+  background: var(--panel-2);
+  border-color: rgba(139, 92, 246, 0.7);
+  color: #fff;
+}
+.stButton > button:active { transform: translateY(1px); }
+.stButton > button:focus-visible,
+[data-testid="stFormSubmitButton"] > button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.stButton > button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* primary buttons (active navigation item, "save" actions) */
+.stButton > button[kind^="primary"],
+[data-testid="stFormSubmitButton"] > button[kind^="primary"],
+button[data-testid^="stBaseButton-primary"] {
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3);
+}
+.stButton > button[kind^="primary"]:hover,
+[data-testid="stFormSubmitButton"] > button[kind^="primary"]:hover,
+button[data-testid^="stBaseButton-primary"]:hover {
+  filter: brightness(1.1);
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
+  color: #fff;
+}
+
+/* sidebar navigation: ghost items, the active page is the "primary" one */
+section[data-testid="stSidebar"] .stButton > button { text-align: left; justify-content: flex-start; }
+section[data-testid="stSidebar"] .stButton > button > div { justify-content: flex-start; }
+section[data-testid="stSidebar"] [class*="st-key-nav_"] .stButton > button,
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button {
+  background: transparent; border-color: transparent; color: var(--muted); box-shadow: none;
+}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button:hover {
+  background: rgba(139, 92, 246, 0.12); color: var(--text); border-color: transparent;
+}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button[kind^="primary"],
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button[data-testid^="stBaseButton-primary"] {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.28), rgba(139, 92, 246, 0.08));
+  color: #fff; border-color: rgba(139, 92, 246, 0.45); box-shadow: none; filter: none;
+}
+section[data-testid="stSidebar"] .st-key-new_chat button {
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
+  color: #fff; border-color: transparent; justify-content: center;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3);
+}
+section[data-testid="stSidebar"] .st-key-new_chat button > div { justify-content: center; }
+section[data-testid="stSidebar"] .st-key-new_chat button:hover { filter: brightness(1.1); background: linear-gradient(135deg, var(--purple-deep), var(--purple)); }
+section[data-testid="stSidebar"] .st-key-clear_chat button { color: var(--muted); }
+section[data-testid="stSidebar"] .st-key-clear_chat button:hover { color: #FCA5A5; border-color: rgba(248, 113, 113, 0.6); }
+
+/* slider */
+[data-testid="stSlider"] label p { color: var(--text); font-weight: 500; font-size: 0.88rem; }
+[data-testid="stSliderThumbValue"], [data-testid="stSlider"] [data-testid="stThumbValue"] { color: var(--cyan); }
+[data-testid="stSliderTickBarMin"], [data-testid="stSliderTickBarMax"] { color: var(--muted); }
+
+/* ---------- Inputs --------------------------------------------------------- */
+[data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
+  background: var(--panel-2);
+  border-color: var(--border);
+  border-radius: var(--radius-sm);
+}
+[data-baseweb="input"] input, [data-baseweb="textarea"] textarea { color: var(--text); }
+[data-baseweb="input"]:focus-within, [data-baseweb="textarea"]:focus-within,
+[data-baseweb="select"] > div:focus-within { border-color: var(--purple); box-shadow: 0 0 0 1px var(--purple); }
+.stApp ::placeholder { color: #7C8AA5; opacity: 1; }
+
+/* chat input */
+[data-testid="stBottom"] > div, [data-testid="stBottomBlockContainer"] { background: var(--bg); }
+[data-testid="stChatInput"] {
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+[data-testid="stChatInput"]:focus-within { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25), var(--shadow); }
+[data-testid="stChatInput"] textarea { color: var(--text); background: transparent; }
+[data-testid="stChatInput"] button { color: #fff; background: linear-gradient(135deg, var(--purple-deep), var(--purple)); border-radius: 12px; }
+[data-testid="stChatInput"] button:disabled { background: var(--panel-2); color: var(--muted); }
+
+/* ---------- Tabs, expanders, forms, code ----------------------------------- */
+[data-baseweb="tab-list"] { gap: 6px; border-bottom: 1px solid var(--border); }
+button[data-baseweb="tab"] { color: var(--muted); background: transparent; }
+button[data-baseweb="tab"] p { color: inherit; }
+button[data-baseweb="tab"][aria-selected="true"] { color: var(--text); }
+[data-baseweb="tab-highlight"] { background: linear-gradient(90deg, var(--purple), var(--cyan)); height: 2px; }
+[data-baseweb="tab-border"] { background: transparent; }
+
+[data-testid="stExpander"] {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease;
+}
+[data-testid="stExpander"]:hover { border-color: var(--border-strong); }
+[data-testid="stExpander"] summary { color: var(--text); font-weight: 500; }
+[data-testid="stExpander"] summary:hover { color: #fff; }
+[data-testid="stExpander"] details { border: 0; }
+
+[data-testid="stForm"] {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem;
+}
+
+[data-testid="stCode"], .stCodeBlock, pre {
+  background: var(--panel-2) !important; border: 1px solid var(--border); border-radius: 10px;
+}
+[data-testid="stCode"] pre, [data-testid="stCode"] code, .stCodeBlock pre, .stCodeBlock code {
+  white-space: pre-wrap !important; word-break: break-word; color: var(--text) !important; font-size: 0.88rem;
+}
+
+[data-testid="stAlert"] { border-radius: var(--radius-sm); }
+hr { border-color: var(--border); }
+
+/* ---------- Page header ---------------------------------------------------- */
+.hero { text-align: center; padding: 6px 0 14px; }
+.hero h1 {
+  margin: 0; font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; padding: 0;
+  background: linear-gradient(90deg, #C4B5FD, var(--purple) 45%, var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .sub { color: var(--muted); font-size: 1.02rem; margin-top: 6px; }
+.status-pill {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+  padding: 5px 13px; border-radius: 999px; font-size: 0.8rem; color: var(--text);
+  background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.35);
+}
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); animation: pulse 2.2s infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.page-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 4px; color: var(--text); }
+.page-sub { color: var(--muted); margin: 0 0 18px; font-size: 0.95rem; }
+
+/* ---------- Welcome section ------------------------------------------------ */
+.welcome {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.10), rgba(18, 26, 43, 0.9));
+  border: 1px solid var(--border); border-radius: 20px; padding: 22px 24px; margin: 8px 0 18px;
+  box-shadow: var(--shadow);
+}
+.welcome h2 { margin: 0 0 6px; font-size: 1.3rem; font-weight: 650; color: var(--text); }
+.welcome p { color: var(--muted); margin: 0; line-height: 1.6; font-size: 0.96rem; }
+.welcome .demo-note {
+  margin-top: 12px; font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px; align-items: flex-start;
+}
+.welcome .demo-note b { color: var(--cyan); font-weight: 600; }
+
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 20px; }
+.feature {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.feature:hover { transform: translateY(-2px); border-color: rgba(139, 92, 246, 0.5); }
+.feature .f-icon {
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 10px;
+  background: rgba(34, 211, 238, 0.1); color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.25);
+}
+.feature .f-icon svg { width: 20px; height: 20px; }
+.feature .f-title { font-weight: 600; color: var(--text); font-size: 0.97rem; }
+.feature .f-text { color: var(--muted); font-size: 0.84rem; margin-top: 4px; line-height: 1.5; }
+
+.section-label {
+  color: var(--muted); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; margin: 4px 0 10px;
+}
+
+/* suggested question buttons */
+[class*="st-key-sugg_"] button, [class*="st-key-rel_"] button {
+  text-align: left; justify-content: flex-start; background: var(--panel);
+  border: 1px solid var(--border); padding: 0.75rem 1rem; min-height: 3rem; height: auto;
+}
+[class*="st-key-sugg_"] button > div, [class*="st-key-rel_"] button > div { justify-content: flex-start; }
+[class*="st-key-sugg_"] button p, [class*="st-key-rel_"] button p { text-align: left; white-space: normal; }
+[class*="st-key-sugg_"] button:hover, [class*="st-key-rel_"] button:hover { transform: translateY(-1px); }
+[class*="st-key-rel_"] button { min-height: 2.4rem; padding: 0.45rem 0.8rem; font-size: 0.88rem; }
+
+/* ---------- Chat bubbles ---------------------------------------------------- */
+[data-testid="stChatMessage"] {
+  width: fit-content;
+  max-width: min(86%, 760px);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px 20px 20px 6px;
+  padding: 14px 18px;
+  margin: 0 0 14px 0;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+/* user bubble: right aligned, purple.  The hidden .msg-user marker (written by
+   app.py) lets us tell the two roles apart without relying on Streamlit internals. */
+/* assistant bubbles stay wide enough for the buttons and expanders they contain */
+[data-testid="stChatMessage"]:has(.msg-bot) { width: 100%; max-width: 760px; }
+[data-testid="stChatMessage"]:has(.msg-user) {
+  margin-left: auto;
+  flex-direction: row-reverse;
+  background: linear-gradient(135deg, var(--purple-deep), #7C3AED);
+  border-color: rgba(167, 139, 250, 0.45);
+  border-radius: 20px 20px 6px 20px;
+}
+[data-testid="stChatMessage"]:has(.msg-user) * { color: #fff; }
+[data-testid="stChatMessage"]:has(.msg-user) .msg-meta { color: rgba(255, 255, 255, 0.75); text-align: right; }
+
+[data-testid="stChatMessage"] [data-testid^="stChatMessageAvatar"],
+[data-testid="stChatMessage"] [data-testid^="chatAvatarIcon"] {
+  width: 34px; height: 34px; border-radius: 10px; color: #fff; background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+}
+[data-testid="stChatMessage"]:has(.msg-bot) [data-testid^="stChatMessageAvatar"],
+[data-testid="stChatMessage"]:has(.msg-bot) [data-testid^="chatAvatarIcon"] {
+  background: linear-gradient(135deg, var(--purple-deep), var(--cyan)); border-color: transparent;
+}
+[data-testid="stChatMessage"]:has(.msg-user) [data-testid^="stChatMessageAvatar"],
+[data-testid="stChatMessage"]:has(.msg-user) [data-testid^="chatAvatarIcon"] {
+  background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.35);
+}
+[data-testid="stChatMessageContent"] { min-width: 0; }
+
+.msg-marker { display: none; }
+.msg-text { font-size: 0.98rem; line-height: 1.6; color: var(--text); overflow-wrap: anywhere; white-space: pre-wrap; }
+.msg-meta { font-size: 0.74rem; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 0.74rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 999px; line-height: 1.5;
+}
+.chip-cat { color: #DDD6FE; background: rgba(139, 92, 246, 0.18); border: 1px solid rgba(139, 92, 246, 0.4); }
+.chip-score { color: #A5F3FC; background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.3); }
+.chip-warn { color: #FDE68A; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.35); }
+
+.fallback-title { font-weight: 600; color: #FDE68A; margin-bottom: 6px; display: flex; gap: 8px; align-items: center; }
+.fallback-title svg { width: 18px; height: 18px; }
+.related-label { font-size: 0.76rem; color: var(--muted); margin: 10px 0 6px; }
+
+[data-testid="stChatMessage"] .stButton { margin-top: 4px; }
+.feedback-done { font-size: 0.8rem; color: var(--ok); margin-top: 6px; }
+
+/* ---------- Dashboard tiles & bars ------------------------------------------ */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 6px 0 18px; }
+.tile { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+.tile .t-label { color: var(--muted); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.tile .t-value { font-size: 1.9rem; font-weight: 700; color: var(--text); margin-top: 6px; line-height: 1.1; }
+.tile .t-value.cyan { color: var(--cyan); }
+.tile .t-value.purple { color: #C4B5FD; }
+.tile .t-value.warn { color: var(--warn); }
+.tile .t-sub { color: var(--muted); font-size: 0.78rem; margin-top: 4px; }
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; }
+.panel h3 { margin: 0 0 12px; font-size: 1.02rem; font-weight: 600; color: var(--text); }
+.panel p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin: 0 0 8px; }
+.panel p:last-child { margin-bottom: 0; }
+.panel p b, .panel li b { color: var(--text); }
+.panel ul { margin: 6px 0 0; padding-left: 1.2rem; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.panel code, .tile code, .info-card code {
+  background: var(--panel-2); color: #A5F3FC; padding: 1px 6px; border-radius: 6px; font-size: 0.85em;
+}
+
+.bar-row { display: grid; grid-template-columns: minmax(90px, 160px) 1fr 36px; align-items: center; gap: 12px; margin: 9px 0; font-size: 0.88rem; }
+.bar-row .b-label { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { height: 9px; background: var(--panel-2); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+.bar-row .b-count { color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+
+.notice {
+  display: flex; gap: 12px; align-items: flex-start; background: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.25); border-radius: var(--radius-sm); padding: 12px 14px;
+  color: var(--text); font-size: 0.86rem; line-height: 1.55; margin-bottom: 16px;
+}
+.notice svg { width: 18px; height: 18px; color: var(--cyan); flex: none; margin-top: 2px; }
+.notice b { color: #A5F3FC; }
+.notice.warn { background: rgba(251, 191, 36, 0.07); border-color: rgba(251, 191, 36, 0.35); }
+.notice.warn svg { color: var(--warn); }
+.notice.warn b { color: #FDE68A; }
+
+.recent { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.recent:last-child { border-bottom: 0; }
+.recent .r-q { color: var(--text); font-size: 0.92rem; overflow-wrap: anywhere; }
+.recent .msg-meta { margin-top: 2px; }
+
+.empty-state { text-align: center; color: var(--muted); padding: 28px 12px; font-size: 0.92rem; }
+
+/* pipeline steps (About page) */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 8px 0 16px; }
+.step { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.step .s-num {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700;
+  color: #fff; background: linear-gradient(135deg, var(--purple-deep), var(--purple)); margin-bottom: 8px;
+}
+.step .s-title { font-weight: 600; color: var(--text); font-size: 0.93rem; }
+.step .s-text { color: var(--muted); font-size: 0.82rem; margin-top: 3px; line-height: 1.5; }
+
+.faq-answer { color: var(--text); line-height: 1.65; font-size: 0.95rem; }
+
+/* ---------- Responsive ------------------------------------------------------- */
+@media (max-width: 900px) {
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .block-container { padding-left: 1rem; padding-right: 1rem; padding-top: 1rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .features, .steps { grid-template-columns: 1fr; }
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tile .t-value { font-size: 1.5rem; }
+  [data-testid="stChatMessage"] { max-width: 100%; padding: 12px 14px; }
+  .welcome { padding: 18px; }
+  .bar-row { grid-template-columns: 90px 1fr 30px; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+  .feature, .stButton > button { transition: none; }
+}
