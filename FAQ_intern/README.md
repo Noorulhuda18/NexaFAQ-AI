@@ -1,3 +1,6 @@
+Demo :https://nexafaq-ai-du78xh3gcv9bvjouvxzrku.streamlit.app/
+
+
 # NexaFAQ AI — AI-Powered FAQ Chatbot (NLP + Streamlit)
 
 NexaFAQ AI answers questions written in natural language by finding the most similar question in a FAQ knowledge base. It uses classic NLP (NLTK) and machine-learning tools (scikit-learn TF-IDF + cosine similarity). It runs **entirely on your computer**: no API keys, no cloud services, no external LLM.
